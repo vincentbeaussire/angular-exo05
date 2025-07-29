@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
 import {Librairie} from '../../pages/librairie/librairie';
 import {FormsModule} from '@angular/forms';
+import {NgIf} from '@angular/common';
+import {Book} from '../../utils/types/book.type';
 
 @Component({
   selector: 'app-formulaire',
-  imports: [Librairie, FormsModule],
+  imports: [Librairie, FormsModule, NgIf],
   templateUrl: './formulaire.html',
   styleUrl: './formulaire.css'
 })
@@ -13,7 +15,7 @@ export class Formulaire {
   message2 : string = ""
   isSubmitted : boolean = false
 
-  librairie : Librairie = {
+  book : Book = {
     title: "",
     author: "",
     isRead: false
@@ -29,6 +31,6 @@ export class Formulaire {
   }
 
   get isRead() {
-    return this.librairie
+    return this.book.isRead;
   }
 }

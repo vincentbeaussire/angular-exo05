@@ -3,7 +3,6 @@
 <section>
   <h2>Template Driven Forms</h2>
 
-
   <div>
     <label for="msg">Message</label>
     <input type="text" name="msg" [value]="message" (input)="updateMessage($event)">
@@ -17,22 +16,21 @@
   <p>Message = {{ message2 }}</p>
 
   <h3>Formulaire</h3>
-  <form (ngSubmit)="submitBook()">
+  <form (ngSubmit)="submitBook()" #bookForm="ngForm">
     <div>
       <label for="title">Title</label>
-      <input type="text" name="title" [(ngModel)]="book.title">
+      <input type="text" id="title" name="title" [(ngModel)]="book.title" required>
     </div>
     <div>
       <label for="author">Author</label>
-      <input type="text" name="author" [(ngModel)]="book.author">
+      <input type="text" id="author" name="author" [(ngModel)]="book.author" required>
     </div>
     <div>
       <label for="isRead">Read</label>
-      <input type="boolean" name="isRead" [(ngModel)]="book.isRead">
-      @if (isRead) {
-        <p>Book has been already read</p>
-      }
+      <input type="checkbox" id="isRead" name="isRead" [(ngModel)]="book.isRead">
+      <p *ngIf="book.isRead">Book has been already read</p>
     </div>
-    <button>Add a book</button>
+    <button type="submit">Add a book</button>
   </form>
 </section>
+
