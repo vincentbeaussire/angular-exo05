@@ -1,0 +1,38 @@
+<h1>Formulaires</h1>
+
+<section>
+  <h2>Template Driven Forms</h2>
+
+
+  <div>
+    <label for="msg">Message</label>
+    <input type="text" name="msg" [value]="message" (input)="updateMessage($event)">
+  </div>
+  <p>Message = {{ message }}</p>
+
+  <div>
+    <label for="msg2">Message</label>
+    <input type="text" name="msg2" [(ngModel)]="message2">
+  </div>
+  <p>Message = {{ message2 }}</p>
+
+  <h3>Formulaire</h3>
+  <form (ngSubmit)="submitBook()">
+    <div>
+      <label for="title">Title</label>
+      <input type="text" name="title" [(ngModel)]="book.title">
+    </div>
+    <div>
+      <label for="author">Author</label>
+      <input type="text" name="author" [(ngModel)]="book.author">
+    </div>
+    <div>
+      <label for="isRead">Read</label>
+      <input type="boolean" name="isRead" [(ngModel)]="book.isRead">
+      @if (isRead) {
+        <p>Book has been already read</p>
+      }
+    </div>
+    <button>Add a book</button>
+  </form>
+</section>
