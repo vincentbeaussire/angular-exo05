@@ -2,7 +2,7 @@ import { Routes } from '@angular/router';
 import { Counter } from './pages/counter/counter';
 import { Series } from './pages/series/series';
 import { Librairie } from './pages/librairie/librairie';
-import {Formulaire} from './components/formulaire/formulaire';
+import {Formulaire} from './pages/librairie/formulaire/formulaire';
 
 export const routes: Routes = [
     {path: "", component: Counter},

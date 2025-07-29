@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
-import {Librairie} from '../../pages/librairie/librairie';
+import {Librairie} from '../librairie';
 import {FormsModule} from '@angular/forms';
 import {NgIf} from '@angular/common';
-import {Book} from '../../utils/types/book.type';
+import {Book} from '../../../utils/types/book.type';
 
 @Component({
   selector: 'app-formulaire',
